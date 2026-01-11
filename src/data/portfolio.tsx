@@ -140,7 +140,22 @@ export const PORTFOLIO_DATA: Project[] = [
         }
     },
 
-    // --- RESEARCH ---
+    {
+        id: 'dummy-beater',
+        category: 'engineering',
+        title: 'Dummy Beater',
+        subtitle: 'Interactive CV Game',
+        problemStatement: 'Wanted to create a physical-digital interaction game using motion tracking.',
+        solution: 'Developed a Processing game that utilizes OpenCV to track player movements, allowing them to "beat up" a digital dummy by punching the air in front of the camera.',
+        techStack: ['Processing', 'OpenCV', 'Java', 'Computer Vision'],
+        whatILearned: ['Motion Detection Algorithms', 'Game Physics', 'Interactive Media Design'],
+        heroMedia: {
+            type: 'youtube',
+            url: 'https://www.youtube.com/embed/-TQtUY5OmYo',
+            caption: 'Gameplay Demo'
+        }
+    },
+
     {
         id: 'microphone-part',
         category: 'research',
