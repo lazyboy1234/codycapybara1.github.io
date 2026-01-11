@@ -1,0 +1,175 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem 8rem 2rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.diamond {
+    width: 8px;
+    height: 8px;
+    background: #f59e0b;
+    /* Accent variation */
+    transform: rotate(45deg);
+}
+
+.heading {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--text-primary);
+    letter-spacing: 0.05em;
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, #f59e0b, transparent);
+    opacity: 0.3;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filterBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filterBtn:hover,
+.active {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: #10b981;
+    color: #10b981;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.card {
+    background: rgba(10, 17, 28, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* Category Specific Borders */
+.card[data-category="engineering"] {
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    /* Green */
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.05);
+}
+
+.card[data-category="research"] {
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    /* Gold */
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.05);
+}
+
+.card[data-category="art"] {
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    /* Purple */
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.05);
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.icon {
+    color: inherit;
+}
+
+.card[data-category="engineering"] .icon {
+    color: #10b981;
+}
+
+.card[data-category="research"] .icon {
+    color: #f59e0b;
+}
+
+.card[data-category="art"] .icon {
+    color: #8b5cf6;
+}
+
+.cardTitle {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.cardDesc {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.5;
+    flex: 1;
+}
+
+.problem {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.techTags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

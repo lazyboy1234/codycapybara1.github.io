@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* Cosmic Minimalist Palette - Tuned Transparency */
+  --bg-deep: #050b14;
+  --bg-glass: rgba(5, 11, 20, 0.4);
+  /* Much more transparent */
+
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+
+  /* Role Accents */
+  --accent-engineering: #10b981;
+  --accent-research: #f59e0b;
+  --accent-art: #8b5cf6;
+
+  --color-border: rgba(255, 255, 255, 0.1);
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-deep);
+  /* Keep base dark */
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* CSS Starfield Removed in favor of React Canvas Component */
+
+/* Utility */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}

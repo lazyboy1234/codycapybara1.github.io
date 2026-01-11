@@ -1,0 +1,130 @@
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    height: 100%;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.paperItem {
+    border: 1px solid var(--color-border);
+    padding: 1rem;
+    background: rgba(22, 27, 34, 0.5);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.paperItem:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-text-dim);
+}
+
+.active {
+    border-color: var(--color-accent);
+    box-shadow: inset 2px 0 0 var(--color-accent);
+}
+
+.paperTitle {
+    color: var(--color-text);
+    font-weight: bold;
+}
+
+.paperMeta {
+    font-size: 0.7rem;
+    color: var(--color-text-dim);
+    margin-top: 0.2rem;
+}
+
+.preview {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.title {
+    font-size: 2rem;
+    color: var(--color-text);
+    margin: 0;
+    font-family: serif;
+    /* Academic feel */
+}
+
+.divider {
+    width: 100px;
+    height: 4px;
+    background: var(--color-accent);
+    margin-top: 0.5rem;
+}
+
+.abstractBox {
+    border: 1px solid var(--color-accent-dim);
+    padding: 1.5rem;
+    border-radius: 4px;
+    background: rgba(242, 204, 96, 0.05);
+}
+
+.abstractTitle {
+    color: var(--color-accent);
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.abstractTitle::before {
+    content: '📄';
+}
+
+.abstractText {
+    line-height: 1.6;
+}
+
+.documentFrame {
+    flex: 1;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+}
+
+.docHeader {
+    background: var(--color-panel);
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.downloadBtn {
+    background: var(--color-accent);
+    color: #000;
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.pdfObject {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #1a1a1a;
+}
+
+.fallback {
+    padding: 2rem;
+    color: #d84444;
+    background: rgba(216, 68, 68, 0.1);
+    height: 100%;
+}

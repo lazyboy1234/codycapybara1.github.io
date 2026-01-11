@@ -1,0 +1,344 @@
+/* Page Wrapper (Standalone) */
+.pageWrapper {
+    min-height: 100vh;
+    padding: 6rem 2rem;
+    /* Increased top padding */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container {
+    max-width: 1400px;
+    /* Wider container to let content breathe */
+    width: 100%;
+    /* More Transparency as requested */
+    background: rgba(10, 17, 28, 0.4);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    margin: 0 auto;
+    overflow: hidden;
+    /* Contain everything */
+}
+
+.closeBtn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    z-index: 10;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.closeBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Header */
+.header {
+    padding: 4rem;
+    /* More breathing room */
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+    flex: 1;
+    /* Allow it to take up space in flex container */
+}
+
+/* Badge / Stack */
+.stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    /* More gap */
+    margin: 1.5rem 0 3rem 0;
+    /* More vertical space */
+}
+
+.badge {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-border);
+    color: var(--text-secondary);
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    /* Larger */
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-family: var(--font-sans);
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* Content Grid */
+.contentGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 50/50 split for better balance */
+    gap: 0;
+    flex: 1;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 3rem;
+    /* More space between sections */
+}
+
+.sectionTitle {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    border-left: 3px solid var(--color-border);
+    /* Thicker line */
+    padding-left: 1rem;
+}
+
+.section p {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    /* Readable */
+    line-height: 1.8;
+    /* Relaxed leading */
+    color: var(--text-secondary);
+}
+
+.list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.list li {
+    margin-bottom: 0.75rem;
+}
+
+/* Media Column */
+.mediaCol {
+    padding: 4rem;
+    /* Match header padding */
+    border-left: 1px solid var(--color-border);
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    /* Big gaps between images */
+}
+
+/* IMPORTANT: Fix for Glitchy Images */
+.mediaWrapper {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    /* Allow rotation to stick out if needed, or hidden if we want crop. Visible prevents clipping */
+}
+
+/* When rotated, we need more vertical space and ensuring it doesn't overlap */
+.rotated {
+    margin: 4rem 0;
+    /* Add massive margin top/bottom to prevent overlap */
+    padding: 2rem;
+}
+
+.mediaContent {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    display: block;
+    background: rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+/* If it is rotated, we want to un-constrain the height or changing object fit */
+.rotated .mediaContent {
+    height: auto;
+    max-height: 600px;
+    width: auto;
+    max-width: 100%;
+}
+
+.mediaContent:hover {
+    transform: scale(1.02);
+}
+
+/* For rotated items, hover effect needs to account for existing transform */
+.rotated .mediaContent:hover {
+    transform: rotate(90deg) scale(1.02);
+}
+
+.heroMedia {
+    width: 100%;
+    margin-bottom: 2rem;
+    /* Allow hero to be larger/auto if needed, or keep generic */
+}
+
+/* Specify if hero needs different treatment */
+.heroMedia .mediaContent {
+    height: auto;
+    max-height: 600px;
+    /* Cap it though */
+    object-fit: contain;
+    /* Don't crop hero */
+}
+
+.caption {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 1rem;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* Gallery Grid */
+.galleryGrid {
+    display: grid;
+    /* Increase min-width to prevent squishing */
+    grid-template-columns: 1fr;
+    /* Single column for clarity, or 2 if space permits */
+    gap: 3rem;
+}
+
+@media (min-width: 1600px) {
+    .galleryGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.galleryItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.galleryCaption {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.75rem;
+    opacity: 0.6;
+    text-align: center;
+}
+
+/* Actions */
+.actions {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.actionBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.actionBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    border-color: var(--text-primary);
+}
+
+.backBtn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 1.5rem 3rem;
+    align-self: flex-start;
+}
+
+.backBtn:hover {
+    color: var(--text-primary);
+}
+
+/* Sketchfab & PDF specific */
+.sketchfabWrapper {
+    width: 100%;
+    height: 80vh;
+    /* Much Taller */
+    min-height: 600px;
+    background: #000;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.pdfContainer {
+    width: 100%;
+    background: #000;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 1100px) {
+    .contentGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .mediaCol {
+        border-left: none;
+        border-top: 1px solid var(--color-border);
+        padding: 2rem;
+    }
+
+    .pageWrapper {
+        padding: 0;
+    }
+
+    .container {
+        border-radius: 0;
+        min-height: 100vh;
+        border: none;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+}
